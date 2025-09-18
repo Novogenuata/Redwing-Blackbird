@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=3 uid="uid://cqq66g7lc64s6"]
+
+[ext_resource type="PackedScene" uid="uid://cq6534qmv40of" path="res://Scenes/CharacterScenes/red_wing.tscn" id="1_ravny"]
+[ext_resource type="Texture2D" uid="uid://c35kwds1rk836" path="res://icon.svg" id="2_g3cjn"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_447v4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g3cjn"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g3cjn"]
+friction = 0.67
+bounce = 0.59
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g3cjn"]
+
+[node name="MainPlatformerTest" type="Node2D"]
+
+[node name="RedWing" parent="." instance=ExtResource("1_ravny")]
+position = Vector2(544, 491)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+z_index = -1
+position = Vector2(0, 782)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+scale = Vector2(-24.7339, 0.658226)
+texture = ExtResource("2_g3cjn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -43)
+shape = SubResource("WorldBoundaryShape2D_447v4")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(823, 678)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
+texture = ExtResource("2_g3cjn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+scale = Vector2(6.28, 6.32)
+shape = SubResource("RectangleShape2D_g3cjn")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(981, 557)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3"]
+texture = ExtResource("2_g3cjn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+scale = Vector2(6.28, 6.32)
+shape = SubResource("RectangleShape2D_g3cjn")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(1461, 540)
+scale = Vector2(5.84, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D4"]
+texture = ExtResource("2_g3cjn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+scale = Vector2(6.28, 6.32)
+shape = SubResource("RectangleShape2D_g3cjn")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+mass = 0.008
+physics_material_override = SubResource("PhysicsMaterial_g3cjn")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+texture = ExtResource("2_g3cjn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+scale = Vector2(6.84, 6.88)
+shape = SubResource("CircleShape2D_g3cjn")

@@ -1,0 +1,211 @@
+[gd_scene load_steps=27 format=3 uid="uid://cq6534qmv40of"]
+
+[ext_resource type="Script" uid="uid://cp1lp2td77bmo" path="res://Scripts/CharacterScripts/red_wing_p_layer.gd" id="1_5ufr4"]
+[ext_resource type="Texture2D" uid="uid://bx1eec0k2bhsh" path="res://Assets/CharacterSpriteSheets/RedWing.png" id="2_ud30d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdtnq"]
+atlas = ExtResource("2_ud30d")
+region = Rect2(1000, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vrna6"]
+atlas = ExtResource("2_ud30d")
+region = Rect2(1200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ptfol"]
+atlas = ExtResource("2_ud30d")
+region = Rect2(1400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_im8yp"]
+atlas = ExtResource("2_ud30d")
+region = Rect2(1600, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7y83"]
+atlas = ExtResource("2_ud30d")
+region = Rect2(1800, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2anfk"]
+atlas = ExtResource("2_ud30d")
+region = Rect2(2000, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2q6rn"]
+atlas = ExtResource("2_ud30d")
+region = Rect2(2200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_funkb"]
+atlas = ExtResource("2_ud30d")
+region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_drbw2"]
+atlas = ExtResource("2_ud30d")
+region = Rect2(400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bks53"]
+atlas = ExtResource("2_ud30d")
+region = Rect2(600, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ilmm"]
+atlas = ExtResource("2_ud30d")
+region = Rect2(800, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pq011"]
+atlas = ExtResource("2_ud30d")
+region = Rect2(2200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ap3cn"]
+atlas = ExtResource("2_ud30d")
+region = Rect2(2400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljrg1"]
+atlas = ExtResource("2_ud30d")
+region = Rect2(2600, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_klv8i"]
+atlas = ExtResource("2_ud30d")
+region = Rect2(2800, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7ev4"]
+atlas = ExtResource("2_ud30d")
+region = Rect2(3000, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_481cn"]
+atlas = ExtResource("2_ud30d")
+region = Rect2(3200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s12rv"]
+atlas = ExtResource("2_ud30d")
+region = Rect2(3400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5iol"]
+atlas = ExtResource("2_ud30d")
+region = Rect2(3600, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lh28e"]
+atlas = ExtResource("2_ud30d")
+region = Rect2(3800, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ovjqw"]
+atlas = ExtResource("2_ud30d")
+region = Rect2(4000, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_frcl8"]
+atlas = ExtResource("2_ud30d")
+region = Rect2(4200, 0, 200, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qefdr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fdtnq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vrna6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ptfol")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_im8yp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c7y83")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2anfk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2q6rn")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_funkb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_drbw2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bks53")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ilmm")
+}],
+"loop": false,
+"name": &"Idle_Blink",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pq011")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ap3cn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ljrg1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_klv8i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7ev4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_481cn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s12rv")
+}],
+"loop": false,
+"name": &"Idle_look_around",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t5iol")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lh28e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ovjqw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_frcl8")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 7.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tkb21"]
+radius = 29.0
+height = 126.0
+
+[node name="RedWing" type="Node2D"]
+
+[node name="RedWingPLayer" type="CharacterBody2D" parent="."]
+script = ExtResource("1_5ufr4")
+
+[node name="RedWingSprite" type="AnimatedSprite2D" parent="RedWingPLayer"]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_qefdr")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.126052
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RedWingPLayer"]
+position = Vector2(-7, 2)
+shape = SubResource("CapsuleShape2D_tkb21")
+
+[node name="Timer" type="Timer" parent="RedWingPLayer"]
+one_shot = true
+autostart = true
+ignore_time_scale = true
+
+[node name="Camera2D" type="Camera2D" parent="RedWingPLayer"]
+
+[connection signal="animation_finished" from="RedWingPLayer/RedWingSprite" to="RedWingPLayer" method="_on_red_wing_sprite_animation_finished"]
+[connection signal="timeout" from="RedWingPLayer/Timer" to="RedWingPLayer" method="_on_timer_timeout"]
