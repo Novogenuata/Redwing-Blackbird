@@ -11,7 +11,8 @@ config_version=5
 [application]
 
 config/name="RedWing"
-config/features=PackedStringArray("4.4", "Mobile")
+run/main_scene="uid://cqq66g7lc64s6"
+config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
 [rendering]

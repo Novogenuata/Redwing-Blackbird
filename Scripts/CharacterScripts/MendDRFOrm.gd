@@ -1,0 +1,2 @@
+
+extends player_script

@@ -1,8 +1,9 @@
 extends CharacterBody2D
-@onready var Sprite = %RedWingSprite
+class_name player_script
+@onready var Sprite = $AnimatedSprite2D 
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -500.0
+@export var SPEED = 300.0
+@export var JUMP_VELOCITY = -500.0
 
 
 func _physics_process(delta: float) -> void:
@@ -20,23 +21,23 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		velocity.x = direction * SPEED
 		if velocity.x > 0:
-			%RedWingSprite.flip_h = true
+			Sprite.flip_h = true
 			
 		elif velocity.x < 0:
-			%RedWingSprite.flip_h = false
-		%RedWingSprite.play("Walk")
+			Sprite.flip_h = false
+		Sprite.play("Walk")
 
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		if %RedWingSprite.animation not in ["Idle", "Idle_look_around"]:
-			%RedWingSprite.play("Idle")
+		if Sprite.animation not in ["Idle", "Idle_look_around"]:
+			Sprite.play("Idle")
 
 	move_and_slide()
 
 
 func _on_timer_timeout() -> void:
-	if %RedWingSprite.animation == "Idle" and velocity == Vector2.ZERO:
-		%RedWingSprite.play("Idle_look_around")
+	if Sprite.animation == "Idle" and velocity == Vector2.ZERO:
+		Sprite.play("Idle_look_around")
 	$Timer.wait_time = randf_range(5.0, 10.0)
 	$Timer.start()
 
@@ -45,7 +46,7 @@ func _on_timer_timeout() -> void:
 
 
 func _on_red_wing_sprite_animation_finished() -> void:
-	if %RedWingSprite.animation == "Idle_look_around" and velocity == Vector2.ZERO:
-		%RedWingSprite.play("Idle")
+	if Sprite.animation == "Idle_look_around" and velocity == Vector2.ZERO:
+		Sprite.play("Idle")
 		$Timer.wait_time = randf_range(5.0, 10.0) 
 		$Timer.start()

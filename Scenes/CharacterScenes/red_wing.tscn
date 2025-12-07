@@ -189,8 +189,7 @@ height = 126.0
 [node name="RedWingPLayer" type="CharacterBody2D" parent="."]
 script = ExtResource("1_5ufr4")
 
-[node name="RedWingSprite" type="AnimatedSprite2D" parent="RedWingPLayer"]
-unique_name_in_owner = true
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RedWingPLayer"]
 sprite_frames = SubResource("SpriteFrames_qefdr")
 animation = &"Idle"
 autoplay = "Idle"
@@ -207,5 +206,5 @@ ignore_time_scale = true
 
 [node name="Camera2D" type="Camera2D" parent="RedWingPLayer"]
 
-[connection signal="animation_finished" from="RedWingPLayer/RedWingSprite" to="RedWingPLayer" method="_on_red_wing_sprite_animation_finished"]
+[connection signal="animation_finished" from="RedWingPLayer/AnimatedSprite2D" to="RedWingPLayer" method="_on_red_wing_sprite_animation_finished"]
 [connection signal="timeout" from="RedWingPLayer/Timer" to="RedWingPLayer" method="_on_timer_timeout"]
