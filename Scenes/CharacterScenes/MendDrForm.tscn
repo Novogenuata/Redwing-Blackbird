@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://dr65crhlpgok4"]
+[gd_scene load_steps=19 format=3 uid="uid://dr65crhlpgok4"]
 
 [ext_resource type="Texture2D" uid="uid://cj6usmcenlgc0" path="res://Assets/CharacterSpriteSheets/mendDrForm.png" id="1_6277w"]
 [ext_resource type="Script" uid="uid://55m00f022ppg" path="res://Scripts/CharacterScripts/MendDRFOrm.gd" id="1_sy6ua"]
+[ext_resource type="PackedScene" uid="uid://dtoux83cleyv" path="res://Scenes/Consumables/bullet.tscn" id="2_ae2jv"]
 [ext_resource type="Texture2D" uid="uid://b2sbpxpli87ih" path="res://Assets/CharacterSpriteSheets/DrSS2.png" id="2_tw6ee"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c8fw1"]
@@ -61,7 +62,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qohiq")
 }, {
-"duration": 2.01,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_b2obr")
 }],
 "loop": false,
@@ -114,10 +115,12 @@ height = 33.200005
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("1_sy6ua")
+bullet = ExtResource("2_ae2jv")
 SPEED = 500.0
 JUMP_VELOCITY = -700.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+texture_filter = 1
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_c8fw1")
 animation = &"Fire"
@@ -132,5 +135,8 @@ shape = SubResource("CapsuleShape2D_qohiq")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(-58, 114)
+
+[node name="BulletPoint" type="Marker2D" parent="CharacterBody2D"]
+position = Vector2(-238, 240)
 
 [connection signal="animation_finished" from="CharacterBody2D/AnimatedSprite2D" to="CharacterBody2D" method="_on_animated_sprite_2d_animation_finished"]
