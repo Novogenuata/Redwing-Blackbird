@@ -1,7 +1,20 @@
-[gd_scene load_steps=14 format=3 uid="uid://dr65crhlpgok4"]
+[gd_scene load_steps=18 format=3 uid="uid://dr65crhlpgok4"]
 
 [ext_resource type="Texture2D" uid="uid://cj6usmcenlgc0" path="res://Assets/CharacterSpriteSheets/mendDrForm.png" id="1_6277w"]
 [ext_resource type="Script" uid="uid://55m00f022ppg" path="res://Scripts/CharacterScripts/MendDRFOrm.gd" id="1_sy6ua"]
+[ext_resource type="Texture2D" uid="uid://b2sbpxpli87ih" path="res://Assets/CharacterSpriteSheets/DrSS2.png" id="2_tw6ee"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8fw1"]
+atlas = ExtResource("2_tw6ee")
+region = Rect2(0, 0, 1920, 1620)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qohiq"]
+atlas = ExtResource("2_tw6ee")
+region = Rect2(1920, 0, 1920, 1620)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2obr"]
+atlas = ExtResource("2_tw6ee")
+region = Rect2(3840, 0, 1920, 1620)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sy6ua"]
 atlas = ExtResource("1_6277w")
@@ -41,6 +54,20 @@ region = Rect2(5760, 1620, 1920, 1620)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c8fw1"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8fw1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qohiq")
+}, {
+"duration": 2.01,
+"texture": SubResource("AtlasTexture_b2obr")
+}],
+"loop": false,
+"name": &"Fire",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_sy6ua")
@@ -88,14 +115,15 @@ height = 33.200005
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("1_sy6ua")
 SPEED = 500.0
+JUMP_VELOCITY = -700.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_c8fw1")
-animation = &"Walk"
+animation = &"Fire"
 autoplay = "Idle"
-frame_progress = 0.66501856
-speed_scale = 1.5
+frame = 2
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(-58, 112)
@@ -103,3 +131,6 @@ scale = Vector2(10, 10)
 shape = SubResource("CapsuleShape2D_qohiq")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(-58, 114)
+
+[connection signal="animation_finished" from="CharacterBody2D/AnimatedSprite2D" to="CharacterBody2D" method="_on_animated_sprite_2d_animation_finished"]
