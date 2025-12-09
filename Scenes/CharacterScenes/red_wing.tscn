@@ -193,7 +193,6 @@ script = ExtResource("1_5ufr4")
 sprite_frames = SubResource("SpriteFrames_qefdr")
 animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.126052
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RedWingPLayer"]
 position = Vector2(-7, 2)

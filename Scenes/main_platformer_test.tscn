@@ -71,3 +71,4 @@ scale = Vector2(6.84, 6.88)
 shape = SubResource("CircleShape2D_g3cjn")
 
 [node name="Node2D" parent="." instance=ExtResource("3_447v4")]
+position = Vector2(0, 465)
