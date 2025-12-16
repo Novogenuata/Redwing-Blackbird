@@ -1,10 +1,10 @@
-[gd_scene load_steps=25 format=3 uid="uid://dr65crhlpgok4"]
+[gd_scene load_steps=26 format=3 uid="uid://dr65crhlpgok4"]
 
 [ext_resource type="Texture2D" uid="uid://cj6usmcenlgc0" path="res://Assets/CharacterSpriteSheets/mendDrForm.png" id="1_6277w"]
 [ext_resource type="Script" uid="uid://55m00f022ppg" path="res://Scripts/CharacterScripts/MendDRFOrm.gd" id="1_sy6ua"]
 [ext_resource type="PackedScene" uid="uid://dtoux83cleyv" path="res://Scenes/Consumables/bullet.tscn" id="2_ae2jv"]
 [ext_resource type="Texture2D" uid="uid://b2sbpxpli87ih" path="res://Assets/CharacterSpriteSheets/DrSS2.png" id="2_tw6ee"]
-[ext_resource type="Texture2D" uid="uid://hfmeei1at82i" path="res://Assets/CharacterSpriteSheets/jumpwip.png" id="5_82uop"]
+[ext_resource type="Texture2D" uid="uid://cxi3n8m1ldrsb" path="res://Assets/CharacterSpriteSheets/jumpss.png" id="5_82uop"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c8fw1"]
 atlas = ExtResource("2_tw6ee")
@@ -155,6 +155,8 @@ animations = [{
 radius = 15.400001
 height = 33.200005
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_82uop"]
+
 [node name="Node2D" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
@@ -182,5 +184,8 @@ position = Vector2(-58, 114)
 
 [node name="BulletPoint" type="Marker2D" parent="CharacterBody2D"]
 position = Vector2(-238, 240)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/BulletPoint"]
+shape = SubResource("CircleShape2D_82uop")
 
 [connection signal="animation_finished" from="CharacterBody2D/AnimatedSprite2D" to="CharacterBody2D" method="_on_animated_sprite_2d_animation_finished"]

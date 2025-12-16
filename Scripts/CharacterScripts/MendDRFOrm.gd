@@ -2,6 +2,8 @@ extends player_script
 
 @export var bullet: PackedScene
 
+@onready var bulletpoint = $BulletPoint
+
 var firing = false
 var firing_finished = false
 
@@ -11,13 +13,21 @@ func _physics_process(delta: float) -> void:
 		firing_finished = false
 		Sprite.play("Idle")
 		return
+		
+
 
 
 	if firing:
 		velocity.x = 0
 		move_and_slide()
 		return
+		
+		
+		
+	
 	super(delta)
+	
+
 
 	if Input.is_action_just_pressed("Fire") and is_on_floor():
 		firing = true
