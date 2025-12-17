@@ -180,7 +180,7 @@ scale = Vector2(10, 10)
 shape = SubResource("CapsuleShape2D_qohiq")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-position = Vector2(-58, 114)
+position = Vector2(-52, -73)
 
 [node name="BulletPoint" type="Marker2D" parent="CharacterBody2D"]
 position = Vector2(-238, 240)

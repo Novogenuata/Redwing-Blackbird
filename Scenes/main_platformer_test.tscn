@@ -1,18 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://cqq66g7lc64s6"]
+[gd_scene load_steps=10 format=3 uid="uid://cqq66g7lc64s6"]
 
 [ext_resource type="Texture2D" uid="uid://c35kwds1rk836" path="res://icon.svg" id="2_g3cjn"]
 [ext_resource type="PackedScene" uid="uid://dr65crhlpgok4" path="res://Scenes/CharacterScenes/MendDrForm.tscn" id="3_447v4"]
-[ext_resource type="PackedScene" uid="uid://cq6534qmv40of" path="res://Scenes/CharacterScenes/red_wing.tscn" id="3_pghy4"]
+[ext_resource type="Texture2D" uid="uid://cgr6l5pb14gk3" path="res://Assets/Bacgkrounds/Test/bg111.png" id="3_pua4t"]
+[ext_resource type="Texture2D" uid="uid://cgcd2lkmg8mrt" path="res://Assets/Bacgkrounds/Test/bg22.png" id="4_mcoo2"]
+[ext_resource type="Texture2D" uid="uid://dirxgfpb5rcg2" path="res://Assets/Bacgkrounds/Test/bg11.png" id="5_sw2rf"]
+[ext_resource type="Texture2D" uid="uid://1s63spgvcf20" path="res://Assets/Bacgkrounds/Test/bg33.png" id="6_2ohbb"]
+[ext_resource type="Texture2D" uid="uid://b5iqeqqilrr3b" path="res://Assets/Bacgkrounds/Test/bg55.png" id="7_fcr1i"]
+[ext_resource type="Texture2D" uid="uid://be0m4e34h8m1g" path="res://Assets/Bacgkrounds/Test/bg66.png" id="8_v3vv1"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_447v4"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g3cjn"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g3cjn"]
-friction = 0.67
-bounce = 0.59
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_g3cjn"]
+distance = 142.0
 
 [node name="MainPlatformerTest" type="Node2D"]
 
@@ -21,57 +19,76 @@ z_index = -1
 position = Vector2(0, 782)
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-scale = Vector2(-24.7339, 0.658226)
+position = Vector2(0, 382.21826)
+scale = Vector2(-24.7339, 9.4369755)
 texture = ExtResource("2_g3cjn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, -43)
 shape = SubResource("WorldBoundaryShape2D_447v4")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2(823, 678)
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
-texture = ExtResource("2_g3cjn")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-scale = Vector2(6.28, 6.32)
-shape = SubResource("RectangleShape2D_g3cjn")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="."]
-position = Vector2(981, 557)
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3"]
-texture = ExtResource("2_g3cjn")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-scale = Vector2(6.28, 6.32)
-shape = SubResource("RectangleShape2D_g3cjn")
-
-[node name="StaticBody2D4" type="StaticBody2D" parent="."]
-position = Vector2(1461, 540)
-scale = Vector2(7.43237, -0.594272)
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D4"]
-texture = ExtResource("2_g3cjn")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
-scale = Vector2(6.28, 6.32)
-shape = SubResource("RectangleShape2D_g3cjn")
-
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-scale = Vector2(0.581052, 1.10837)
-mass = 0.008
-physics_material_override = SubResource("PhysicsMaterial_g3cjn")
-
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
-texture = ExtResource("2_g3cjn")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-scale = Vector2(6.84, 6.88)
-shape = SubResource("CircleShape2D_g3cjn")
-
 [node name="Node2D" parent="." instance=ExtResource("3_447v4")]
-position = Vector2(0, 465)
+position = Vector2(0, 253)
 
-[node name="RedWing" parent="." instance=ExtResource("3_pghy4")]
+[node name="Node2D2" type="Node2D" parent="."]
+z_index = -100
+
+[node name="Parallax2D" type="Parallax2D" parent="Node2D2"]
+scale = Vector2(2.5, 2.5)
+scroll_offset = Vector2(50, 0)
+repeat_size = Vector2(100, 0)
+repeat_times = 30
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D2/Parallax2D"]
+texture_filter = 2
+texture = ExtResource("3_pua4t")
+
+[node name="Parallax2D2" type="Parallax2D" parent="Node2D2"]
+scale = Vector2(2.5, 2.5)
+scroll_scale = Vector2(0.1, 1)
+repeat_size = Vector2(1000, 0)
+repeat_times = 50
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D2/Parallax2D2"]
+texture_filter = 2
+texture = ExtResource("4_mcoo2")
+
+[node name="Parallax2D3" type="Parallax2D" parent="Node2D2"]
+scale = Vector2(2.5, 2.5)
+scroll_scale = Vector2(0.9, 1)
+repeat_size = Vector2(1000, 0)
+repeat_times = 50
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D2/Parallax2D3"]
+texture_filter = 2
+texture = ExtResource("5_sw2rf")
+
+[node name="Parallax2D4" type="Parallax2D" parent="Node2D2"]
+scale = Vector2(2.5, 2.5)
+scroll_scale = Vector2(1.4, 1)
+repeat_size = Vector2(1000, 0)
+repeat_times = 50
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D2/Parallax2D4"]
+texture_filter = 2
+texture = ExtResource("6_2ohbb")
+
+[node name="Parallax2D5" type="Parallax2D" parent="Node2D2"]
+scale = Vector2(2.5, 2.5)
+scroll_scale = Vector2(2, 1)
+repeat_size = Vector2(1000, 0)
+repeat_times = 50
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D2/Parallax2D5"]
+texture_filter = 2
+texture = ExtResource("7_fcr1i")
+
+[node name="Parallax2D6" type="Parallax2D" parent="Node2D2"]
+scale = Vector2(2.5, 2.5)
+scroll_scale = Vector2(3, 1)
+repeat_size = Vector2(1000, 0)
+repeat_times = 50
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D2/Parallax2D6"]
+texture_filter = 2
+texture = ExtResource("8_v3vv1")
